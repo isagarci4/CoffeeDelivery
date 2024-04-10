@@ -2,6 +2,7 @@ import { Aside, HeaderContainer } from './style'
 import { MapPin, ShoppingCart } from '@phosphor-icons/react'
 
 import logoCoffeeDelivery from '../../assets/coffe-delivery-logo.svg'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
@@ -14,9 +15,9 @@ export function Header() {
           <span>São Paulo, SP</span>
         </div>
 
-        <a href="">
+        <Link to={`cart`}>
           <ShoppingCart size={22} weight="fill" />
-        </a>
+        </Link>
       </Aside>
     </HeaderContainer>
   )

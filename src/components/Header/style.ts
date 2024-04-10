@@ -2,16 +2,17 @@ import styled from 'styled-components'
 import { mixins } from '../../styles/mixins'
 
 export const HeaderContainer = styled.header`
-  padding: 2rem 10rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-bottom: 5.875rem;
 `
 
 export const Aside = styled.aside`
   display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 12px;
 
   div {
     display: flex;

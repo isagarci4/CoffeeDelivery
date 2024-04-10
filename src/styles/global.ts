@@ -9,6 +9,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    max-width: 1160px;
+    padding: 32px 20px;
+    margin: 0 auto;
+    
     background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors['base-text']};
     -webkit-font-smoothing: antialiased;

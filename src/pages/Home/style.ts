@@ -1,14 +1,31 @@
 import { mixins } from './../../styles/mixins'
 import styled from 'styled-components'
 
-export const HomeContainer = styled.main``
+export const HomeContainer = styled.main`
+  h2 {
+    display: flex;
+    justify-content: flex-start;
+    ${mixins.fonts.titleL}
+  }
+`
 
 export const Presentation = styled.div`
   display: grid;
   grid-template-columns: 60% 40%;
+  justify-content: center;
   gap: 2rem;
   align-items: flex-start;
   margin-bottom: 8.75rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 993px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const Container = styled.div`
@@ -50,4 +67,12 @@ export const Advantages = styled.div`
       border-radius: 999px;
     }
   }
+`
+
+export const Coffees = styled.div`
+  margin-top: 54px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 `

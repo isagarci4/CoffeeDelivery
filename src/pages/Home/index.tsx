@@ -2,12 +2,14 @@ import { useTheme } from 'styled-components'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
 import {
   Advantages,
+  Coffees,
   Container,
   HomeContainer,
   Presentation,
   Title,
 } from './style'
 import coffeeImage from '../../assets/imagem-apresentacao.svg'
+import { CoffeeCard } from '../../components/CoffeeCard'
 
 export function Home() {
   const theme = useTheme()
@@ -63,9 +65,18 @@ export function Home() {
         </Container>
         <img src={coffeeImage} alt="" />
       </Presentation>
-      <div>
-        <h2>Nossos cafés</h2>
-      </div>
+      <h2>Nossos cafés</h2>
+
+      <Coffees>
+        <CoffeeCard />
+        <CoffeeCard />
+        <CoffeeCard />
+        <CoffeeCard />
+        <CoffeeCard />
+        <CoffeeCard />
+        <CoffeeCard />
+        <CoffeeCard />
+      </Coffees>
     </HomeContainer>
   )
 }

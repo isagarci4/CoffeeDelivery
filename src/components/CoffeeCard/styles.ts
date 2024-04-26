@@ -19,9 +19,15 @@ export const Card = styled.div`
   img {
     margin-top: -1rem;
   }
+`
+
+export const Tags = styled.div`
+  display: flex;
+  gap: 4px;
 
   > span {
     ${mixins.fonts.textXS}
+    text-transform: uppercase;
     padding: 4px 8px;
     border-radius: 20px;
     background: ${(props) => props.theme.colors['yellow-light']};

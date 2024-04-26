@@ -7,10 +7,21 @@ import {
   CoffeeDetails,
   DecrementIncrementInput,
   Price,
+  Tags,
 } from './styles'
-import cafe from '../../assets/Expresso.png'
 
-export function CoffeeCard() {
+type Props = {
+  coffee: {
+    id: string
+    image: string
+    tags: string[]
+    title: string
+    description: string
+    price: number
+  }
+}
+
+export function CoffeeCard({ coffee }: Props) {
   const [quantity, setQuantity] = useState(1)
 
   const handleDecrement = () => {
@@ -24,19 +35,24 @@ export function CoffeeCard() {
       setQuantity(quantity + 1)
     }
   }
+
   return (
     <Card>
-      <img src={cafe} alt="" />
-      <span>TRADICIONAL</span>
+      <img src={coffee.image} alt={coffee.title} />
+      <Tags>
+        {coffee.tags.map((tag) => (
+          <span key={tag}>{tag}</span>
+        ))}
+      </Tags>
 
       <CoffeeDetails>
-        <h3>Expresso Tradicional</h3>
-        <p>O tradicional café feito com água quente e grãos moídos</p>
+        <h3>{coffee.title}</h3>
+        <p>{coffee.description}</p>
       </CoffeeDetails>
 
       <AddToCart>
         <Price>
-          R$ <strong>9,90</strong>
+          R$ <strong>{coffee.price.toFixed(2)}</strong>
         </Price>
 
         <DecrementIncrementInput>

@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { Minus, Plus, ShoppingCartSimple } from '@phosphor-icons/react'
 import {
   AddToCart,
   Card,
@@ -7,9 +9,21 @@ import {
   Price,
 } from './styles'
 import cafe from '../../assets/Expresso.png'
-import { Minus, Plus, ShoppingCartSimple } from '@phosphor-icons/react'
 
 export function CoffeeCard() {
+  const [quantity, setQuantity] = useState(1)
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1)
+    }
+  }
+
+  const handleIncrement = () => {
+    if (quantity < 50) {
+      setQuantity(quantity + 1)
+    }
+  }
   return (
     <Card>
       <img src={cafe} alt="" />
@@ -26,18 +40,17 @@ export function CoffeeCard() {
         </Price>
 
         <DecrementIncrementInput>
-          <button id="decrement">
+          <button onClick={handleDecrement}>
             <Minus size={14} />
           </button>
           <input
             type="number"
-            id="quantity"
             name="quantity"
-            value="1"
             min="1"
             max="50"
+            value={quantity}
           />
-          <button id="increment">
+          <button onClick={handleIncrement}>
             <Plus size={14} />
           </button>
         </DecrementIncrementInput>
